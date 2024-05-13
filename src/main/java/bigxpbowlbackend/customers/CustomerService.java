@@ -13,7 +13,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getAllCustomers() {
+    public List<Customer> findAllCustomers() {
         return customerRepository.findAll();
     }
 }
