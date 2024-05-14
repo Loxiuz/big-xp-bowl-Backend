@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @CreationTimestamp
     private LocalDateTime saleDate;
 }
