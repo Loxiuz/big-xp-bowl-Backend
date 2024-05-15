@@ -17,7 +17,4 @@ public class LaneAndAirTable {
     private String type;
     private Boolean isJunior;
     private Boolean isActive;
-    @ManyToMany
-    @JoinTable(name = "lane_and_air_table_reservation")
-    private Set<Reservation> reservation;
 }

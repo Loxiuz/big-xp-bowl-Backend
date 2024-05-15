@@ -17,5 +17,4 @@ public class DiningTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int numberOfSeats;
-    private LocalDateTime reservationDateTime;
 }

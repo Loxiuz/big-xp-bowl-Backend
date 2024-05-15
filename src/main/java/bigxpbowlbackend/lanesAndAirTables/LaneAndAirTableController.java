@@ -1,5 +1,6 @@
 package bigxpbowlbackend.lanesAndAirTables;
 
+import bigxpbowlbackend.lanesAndAirTables.reservations.LaneAndAirTableReservation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,4 +21,10 @@ public class LaneAndAirTableController {
     public List<LaneAndAirTable> getLaneAndAirTables() {
         return laneAndAirTableService.findAllLaneAndAirTables();
     }
+
+    @GetMapping("/reservations")
+    public List<LaneAndAirTableReservation> getRelatedReservations() {
+        return laneAndAirTableService.findRelatedReservations();
+    }
+
 }
