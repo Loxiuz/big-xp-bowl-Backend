@@ -1,11 +1,8 @@
 package bigxpbowlbackend.products;
 
-import bigxpbowlbackend.sales.Sale;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Set;
 
 @Getter
 @Setter
