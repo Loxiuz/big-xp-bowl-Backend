@@ -1,8 +1,6 @@
 package bigxpbowlbackend.products;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,20 @@ public class ProductController {
     @GetMapping
     public List<Product> getAllProducts(){
         return productService.findAllProducts();
+    }
+
+    @GetMapping("/{id}")
+    public Product getProduct(@PathVariable int id){
+        return productService.findProductById(id);
+    }
+
+    @PostMapping
+    public Product createProduct(@RequestBody Product product){
+        return productService.saveProduct(product);
+    }
+
+    @PutMapping("/{id}")
+    public Product updateProduct(@PathVariable int id, @RequestBody Product product){
+        return productService.updateProduct(id, product);
     }
 }

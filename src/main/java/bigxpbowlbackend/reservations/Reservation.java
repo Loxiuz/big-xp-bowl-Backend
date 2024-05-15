@@ -19,6 +19,10 @@ public class Reservation {
     @ManyToOne
     private DiningTable diningTable;
     private int numberOfParticipants;
+    private String activity; // Bowling, Air Hockey
+    private int numberOfLanes;
+    private int numberOfJrLanes;
+    private int numberOfAirTables;
     private LocalDateTime activityStart;
     private LocalDateTime activityEnd;
     @CreationTimestamp
