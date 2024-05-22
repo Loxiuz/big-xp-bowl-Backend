@@ -20,7 +20,7 @@ public class Reservation {
     private DiningTable diningTable;
     private int numberOfParticipants;
     private String activity; // Bowling, Air Hockey
-    private int numberOfLanes;
+    private int numberOfStandardLanes;
     private int numberOfJrLanes;
     private int numberOfAirTables;
     private LocalDateTime activityStart;
