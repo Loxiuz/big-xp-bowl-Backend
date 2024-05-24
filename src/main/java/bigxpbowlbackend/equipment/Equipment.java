@@ -13,4 +13,5 @@ public class Equipment {
     private int id;
     private String name;
     private int quantity;
+    private String status;
 }
