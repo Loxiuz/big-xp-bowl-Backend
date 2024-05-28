@@ -16,12 +16,12 @@ public class ReservationController {
     }
 
     @GetMapping
-    public List<Reservation> getAllReservations(){
+    public List<ReservationDTO> getAllReservations(){
         return reservationService.findAllReservations();
     }
 
     @PostMapping("/create")
-    public Reservation createReservation(@RequestBody Reservation reservation){
+    public ReservationDTO createReservation(@RequestBody ReservationDTO reservation){
         return reservationService.saveReservation(reservation);
     }
 }
