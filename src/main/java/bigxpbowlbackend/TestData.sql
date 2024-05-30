@@ -1,10 +1,45 @@
 INSERT INTO employee (date_of_birth, is_active, email, full_name, phone_number)
     VALUES
     ('1990-05-15', true, 'john@example.com', 'John Doe', '1234567890'),
-    ('1985-10-20', false, 'jane@example.com', 'Jane Smith', '9876543210'),
+    ('1985-10-20', true, 'jane@example.com', 'Jane Smith', '9876543210'),
     ('1978-07-03', true, 'bob@example.com', 'Bob Johnson', '5551234567'),
     ('1995-03-25', true, 'alice@example.com', 'Alice Brown', '9995551234'),
-    ('1980-12-10', false, 'sam@example.com', 'Sam Wilson', '7779998888');
+    ('1980-12-10', true, 'sam@example.com', 'Sam Wilson', '7779998888'),
+    ('1992-06-18', true, 'mike@example.com', 'Mike Taylor', '1234567891'),
+    ('1987-11-21', true, 'lisa@example.com', 'Lisa Davis', '9876543211'),
+    ('1979-08-04', true, 'tom@example.com', 'Tom Miller', '5551234568'),
+    ('1996-04-26', true, 'jessica@example.com', 'Jessica Wilson', '9995551235'),
+    ('1982-01-11', true, 'steve@example.com', 'Steve Moore', '7779998889'),
+    ('1991-06-15', true, 'susan@example.com', 'Susan Taylor', '1234567892'),
+    ('1988-04-12', false, 'charlie@example.com', 'Charlie Green', '1234567893'),
+    ('1993-09-30', false, 'kim@example.com', 'Kim Johnson', '9876543212'),
+    ('1984-02-19', false, 'alex@example.com', 'Alex Thompson', '5551234569');
+
+
+
+insert into employee_schedule(employee_role, shift_start, shift_end)
+values ('sale', '10:00:00', '16:00:00'),
+       ('sale', '17:00:00', '23:00:00'),
+       ('operator', '09:00:00', '16:00:00'),
+       ('operator', '17:00:00', '00:00:00'),
+       ('cleaning', '07:00:00', '10:00:00'),
+       ('cleaning', '23:00:00', '02:00:00'),
+       ('manager', '09:00:00', '17:00:00');
+
+insert into employee_with_schedule(employee_id, employee_schedule_id)
+values  (1, 1),
+        (2, 1),
+        (3, 2),
+        (4, 2),
+        (5, 3),
+        (6, 4),
+        (7, 5),
+        (8, 5),
+        (9, 6),
+        (10, 6),
+        (11, 7);
+
+
 
 insert into customer (full_name, email, birth_date, phone_number)
 values ('John Doe', 'john@example.com','1990-05-15', '1234567890'),

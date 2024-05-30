@@ -33,6 +33,16 @@ public class ReservationService {
         return new ReservationDTO(newReservation);
     }
 
+    public ReservationDTO updateReservation(int id, ReservationDTO reservation){
+        Optional<Reservation> original = reservationRepository.findById(id);
+        if(original.isPresent()){
+            updateReservation(original.get(), reservation);
+            reservationRepository.save(original.get());
+            return new ReservationDTO(original.get());
+        }
+        return null;
+    }
+
     public void updateReservation(Reservation original, ReservationDTO r){
         original.setNumberOfParticipants(r.getNumberOfParticipants());
         original.setActivity(r.getActivity());

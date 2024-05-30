@@ -24,4 +24,9 @@ public class ReservationController {
     public ReservationDTO createReservation(@RequestBody ReservationDTO reservation){
         return reservationService.saveReservation(reservation);
     }
+
+    @PutMapping("/{id}")
+    public ReservationDTO updateReservation(@PathVariable int id, @RequestBody ReservationDTO reservation){
+        return reservationService.updateReservation(id, reservation);
+    }
 }
