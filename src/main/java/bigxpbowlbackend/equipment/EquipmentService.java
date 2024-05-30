@@ -16,4 +16,12 @@ public class EquipmentService {
     public List<Equipment> findAllEquipment() {
         return equipmentRepository.findAll();
     }
+
+    public Equipment updateEquipmentById(String id, Equipment equipment) {
+        Equipment equipmentToUpdate = equipmentRepository.findById(Integer.valueOf(id)).orElseThrow();
+        equipmentToUpdate.setName(equipment.getName());
+        equipmentToUpdate.setQuantity(equipment.getQuantity());
+        equipmentToUpdate.setStatus(equipment.getStatus());
+        return equipmentRepository.save(equipmentToUpdate);
+    }
 }
