@@ -20,7 +20,6 @@ public class Employee {
     private String phoneNumber;
     private LocalDate dateOfBirth;
     private Boolean isActive;
-    @ManyToMany
-    @JoinTable(name = "employee_with_schedule")
-    private Set<EmployeeSchedule> employeeSchedule;
+    @ManyToOne
+    private EmployeeSchedule employeeSchedule;
 }

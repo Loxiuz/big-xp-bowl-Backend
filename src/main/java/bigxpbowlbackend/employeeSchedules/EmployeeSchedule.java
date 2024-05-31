@@ -16,10 +16,7 @@ public class EmployeeSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String employee_role;
+    private String employeeRole;
     private LocalTime shiftStart;
     private LocalTime shiftEnd;
-    @ManyToMany
-    @JoinTable(name = "employee_with_schedule")
-    private Set<Employee> employee;
 }
