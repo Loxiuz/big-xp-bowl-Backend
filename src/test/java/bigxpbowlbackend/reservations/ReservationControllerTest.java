@@ -35,7 +35,8 @@ class ReservationControllerTest {
 
     @Test
     void getAllReservations() throws Exception {
-        when(reservationService.findAllReservations()).thenReturn(Collections.singletonList(reservationDTO));
+        when(reservationService.findAllReservations())
+                .thenReturn(Collections.singletonList(reservationDTO));
 
         mockMvc.perform(get("/reservations"))
                 .andExpect(status().isOk())
