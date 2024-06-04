@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -40,4 +41,25 @@ public class ReservationDTO {
         this.creationDateTime = r.getCreationDateTime();
         this.isValid = r.getIsValid();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReservationDTO that = (ReservationDTO) o;
+        return id == that.id &&
+                numberOfParticipants == that.numberOfParticipants &&
+                numberOfStandardLanes == that.numberOfStandardLanes &&
+                numberOfJrLanes == that.numberOfJrLanes &&
+                numberOfAirTables == that.numberOfAirTables &&
+                Objects.equals(customerId, that.customerId) &&
+                Objects.equals(diningTableId, that.diningTableId) &&
+                Objects.equals(activity, that.activity) &&
+                Objects.equals(activityStart, that.activityStart) &&
+                Objects.equals(activityEnd, that.activityEnd) &&
+                Objects.equals(creationDateTime, that.creationDateTime) &&
+                Objects.equals(isValid, that.isValid);
+    }
 }
+
+

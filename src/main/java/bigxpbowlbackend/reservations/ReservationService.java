@@ -29,8 +29,7 @@ public class ReservationService {
     public ReservationDTO saveReservation(ReservationDTO reservation){
         Reservation newReservation = new Reservation();
         updateReservation(newReservation, reservation);
-        reservationRepository.save(newReservation);
-        return new ReservationDTO(newReservation);
+        return new ReservationDTO(reservationRepository.save(newReservation));
     }
 
     public ReservationDTO updateReservation(int id, ReservationDTO reservation){
